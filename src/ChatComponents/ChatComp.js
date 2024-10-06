@@ -3,7 +3,11 @@ import io from 'socket.io-client';
 import './Chat.css'; // for styling
 
 // Connect to the backend server
-const socket = io('http://localhost:5000');
+// const socket = io('http://localhost:5000');
+
+const socket = io('http://localhost:5000', {
+  transports: ['websocket']
+});
 
 const ChatComp = () => {
   const [message, setMessage] = useState('');
