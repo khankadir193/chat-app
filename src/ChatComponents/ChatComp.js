@@ -20,11 +20,11 @@ const ChatComp = () => {
     });
 
     // Clean up the connection when the component unmounts
-    return () => {
-      socket.off('chat message');  // Stop listening for messages
-      socket.disconnect();         // Disconnect the socket
-    };
-  }, []);
+    // return () => {
+    //   socket.off('chat message');  // Stop listening for messages
+    //   socket.disconnect();         // Disconnect the socket
+    // };
+  }, [socket]);
 
   const handleSendMessage = () => {
     if (message.trim()) {
